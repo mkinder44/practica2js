@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 2</title>
+	<meta charset="utf-8" />
+    <style>
+       #bloque {
+        border: 1px solid ;
+        margin: 2 px;
+       }
+       
+        
+    </style>
+    <script>
+        function validar(){
+            var preciobase = 12000;
+
+            var gasolina = document.form1.a[0];
+            var diesel = document.form1.a[1];
+            var hibrido = document.form1.a[2];
+
+            var trespuertas = document.form1.b[0]
+            var familiar = document.form1.b[2]
+            var cincopuertas = document.form1.b[1]
+
+            var rojo = document.form1.c[0]
+            var verde = document.form1.c[1]
+            var naranja = document.form1.c[2]
+            var blanco = document.form1.c[3]
+            var negro = document.form1.c[4]
+
+            var metalizada = document.getElementById("metalizada")
+            var llantas = document.getElementById("llantas")
+            var climatizador = document.getElementById("climatizador")
+            var gps = document.getElementById("gps")
+            var dvd = document.getElementById("dvd")
+
+           
+            if ((trespuertas.checked && diesel.checked) || (trespuertas.checked && hibrido.checked)  )
+            {
+                alert ("tres puertas solo disponible con gasolina");
+                return 0;
+            }
+            else if (trespuertas.checked && gasolina.checked)
+            {
+                var preciobase = preciobase -2000;
+            }
+            else if (familiar.checked)
+            {
+                var preciobase = preciobase + 1500;
+            }
+            else if (cincopuertas.checked)
+            {
+                var preciobase = preciobase;
+            
+            }
+            if (rojo.checked || verde.checked || naranja.checked)
+            {
+                var preciobase = preciobase;
+            
+            }
+            else if (blanco.checked)
+            {
+                var preciobase = preciobase - 500;
+            }
+            else if (negro.checked)
+            {
+                var preciobase = preciobase - 600;
+            }
+            if ((metalizada.checked && blanco.checked) || (metalizada.checked && negro.checked))
+            {
+                alert ("LA PINTURA METALIZADA SOLO PUEDE IR CON ROJO VERDE O NARANJA   ")  
+                return 0; 
+            }
+            else if ((metalizada.checked && rojo.checked) || (metalizada.checked && verde.checked) || (metalizada.checked && naranja.checked))
+            {
+                var preciobase = preciobase + 750;
+            }
+            if (llantas.checked )
+            {
+                var preciobase = preciobase + 200;
+            }
+            if (climatizador.checked )
+            {
+                var preciobase = preciobase + 800;
+            } 
+            if (gps.checked )
+            {
+                var preciobase = preciobase + 340;
+            }
+            if (familiar.checked && dvd.checked)
+            {
+                var preciobase = preciobase + 800;
+            }
+            else
+            {
+                alert ("el dvd solo puede con modelo familiar");
+                return 0;
+            }
+
+
+
+
+           alert (preciobase);
+            
+        }
+    </script>
+
+</head>
+<body >
+    <form name="form1">
+        <div id="bloque">
+            Tipo de motor<br>
+
+            <input type="radio" name="a"  id="gasolina" value="1" onclick=" "/>Gasolina
+            <input type="radio"  name="a" id="diesel" value="2" onclick=" "/>Diesel(+1500 E)
+            <input type="radio" name="a" id="hibrido" value="3" onclick=" "/>Hubrido(+3000 E)
+
+        </div>
+        <div id="bloque">
+            Tipo de puertas<br>
+
+            <input type="radio" name="b"  id="trespuertas" value="1" onclick=" "/>3 puertas
+            <input type="radio" name="b"  id="cincopuertas" value="2" onclick=" "/>5 puertas
+            <input type="radio" name="b"  id="familiar" value="3" onclick=" "/>familiar(+1500 E)
+            
+        </div>
+        <div id="bloque">
+
+            Tipo de pintura:<br>
+            
+            <input type="radio" name="c"  id="rojo" value="1" onclick=" "/>rojo
+            <input type="radio" name="c" id="verde" value="2" onclick=" "/>Verde
+            <input type="radio" name="c" id="naranja" value="3" onclick=" "/>Naranja
+            <input type="radio" name="c" id="blanco" value="4" onclick=" "/>Blanco(-500 E)
+            <input type="radio" name="c" id="negro" value="5" onclick=" "/>Negro(-600 E)
+            
+        </div>
+        <div id="bloque">
+            Seleccionar las que deseen: <br>
+            <input type="checkbox"  id="metalizada" />metalizada(+750)(solo rojo verde o naranja) <br>
+            <input type="checkbox"  id="llantas" />llantas (+200 E)<br>
+            <input type="checkbox"  id="climatizador" />climatizador(+800 E) <br>
+            <input type="checkbox"  id="gps" />GPS(+340 E) <br>
+            <input type="checkbox"  id="dvd" />DVD (+800 E)(solo modelo familiar) <br>
+            
+        </div>
+        <div id="bloque">
+            total a Cobrar: <br>
+
+
+            <input type="button" value="calcular" onclick=" validar() ">
+            
+        </div>
+    </form>
+
+   
+</body>
+</html>

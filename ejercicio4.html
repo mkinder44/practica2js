@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 3</title>
+	<meta charset="utf-8" />
+    <style>
+     
+    
+     h1{
+         color: blue;
+         background-color: orange;
+     }
+
+     #div1{
+        background-color: yellow;
+        border-style: solid;
+        text-align: center;
+        
+     }
+
+      
+        
+
+    </style>
+    <script>
+        function comprobar() {
+
+            var nombre = document.getElementById("nombre").value
+            var apellido_a = document.getElementById("1apellido").value
+            var apellido_b = document.getElementById("2apellido").value
+            var email = document.getElementById("email").value
+            var nafi = document.getElementById("nafi").value.length
+            var nafi_b = document.getElementById("nafi2").value.length
+
+            if (nombre == 0) {
+                alert("debe rellenar el nombre")
+            }
+            if (apellido_a == 0) {
+                alert("debe rellenar el primer apellido")
+            }
+            if (apellido_b == 0) {
+                alert("debe rellenar el segundo apellido")
+            }
+            if (nafi > 7 || nafi < 7) {
+                alert("rellena bien los 7 primeros numeros de SS")
+            }
+            if (nafi_b > 0 && nafi_b < 3) {
+                alert("rellena bien los 2 numeros de SS")
+            }
+            if (email == 0) {
+                alert(" Campo correo vacio")
+            }
+            else if (document.getElementById("email").value.indexOf("@") == -1 || document.getElementById("email").value.indexOf(".") == -1) {
+                alert(" Introduzca correo de manera correcta")
+    }
+
+        }
+    </script>
+   
+</head>
+<body>
+        <h1>Solicitud del Informe de Vida Laboral</h1>
+        <div id="div1">
+        <form name="form1">
+            
+            Nombre: <input type="text" name="nombre" id="nombre"><br>
+            Primer apellido: <input type="text" name="1apellido" id="1apellido"><br>
+            Segundo apellido: <input type="text" name="2apellido" id="2apellido"><br>
+            Correo electronico : <input type="email" name="email" id="email"><br>
+            Numero de afiliado a la S.S.: <select><option>Acoruña</option><option>Madrid</option> </select>
+                                            /<input type="number" name="nafi" id="nafi">
+                                            /<input type="number" name="nafi2" id="nafi2"> 
+
+        
+        </div>
+        <input type="button" name="boton" value="enviar" onclick="comprobar()">
+        <input type="reset" name="boton" value="borrar">
+        </form>
+
+   
+</body>
+</html>

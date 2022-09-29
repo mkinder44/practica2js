@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 3</title>
+	<meta charset="utf-8" />
+    <style>
+     
+        .div
+        {
+            background-color: beige;
+            margin-bottom: 10px;
+        }
+
+        
+
+    </style>
+    <script>
+       function validar()
+       {
+           var resultado = 0;
+           
+           var cinco = document.getElementById("1905")
+           var cuatro = document.getElementById("1904")
+           var tres = document.getElementById("1903")
+           var dos = document.getElementById("1902")
+
+           var ocho = document.getElementById("2018")
+           var siete = document.getElementById("2017")
+           var nueve = document.getElementById("2019")
+           var seis = document.getElementById("2016")
+
+           var fernando = document.getElementById("fernando")
+           var juanfran = document.getElementById("juanfran")
+           var koke = document.getElementById("koke")
+           var saul = document.getElementById("saul")
+
+           if (tres.checked)
+           {
+               var resultado = resultado + 1;
+           }
+           if (siete.checked)
+           {
+               var resultado = resultado + 1;
+           }
+           if (koke.checked)
+           {
+               var resultado = resultado + 1;
+           }
+           alert(resultado+"/3");
+       }
+
+    </script>
+   
+</head>
+<body>
+    <div class="div">
+        <p>¿En que año se fundo el atletico de madrid?</p>
+        <p>Seleccione una:</p>
+        <input type="radio" name="a" id="1905" >1905 <br>
+        <input type="radio" name="a" id="1904" >1904 <br>
+        <input type="radio" name="a" id="1903" >1903 <br>
+        <input type="radio" name="a" id="1902" >1902 <br>
+    </div>
+    
+    <div class="div">
+        <p>¿En que año se inaguro el actual estadio?</p>
+        <p>Seleccione una:</p>
+        <input type="radio" name="b" id="2018" >2018 <br>
+        <input type="radio" name="b" id="2017" >2017 <br>
+        <input type="radio" name="b" id="2019" >2019 <br>
+        <input type="radio" name="b" id="2016" >2016 <br>
+    </div>
+
+    <div class="div">
+        <p>¿quien es el jugador con mas partidos en la historia del atleico de madrid?</p>
+        <p>Seleccione una:</p>
+        <input type="radio" name="c" id="fernando" >Fernando Tores <br>
+        <input type="radio" name="c" id="juanfran" >Juanfran <br>
+        <input type="radio" name="c" id="koke" >Koke <br>
+        <input type="radio" name="c" id="saul" >Saul <br>
+    </div>
+    
+    <input type="button" name="boton" value="siguiente" onclick="validar()">
+   
+
+   
+</body>
+</html>
